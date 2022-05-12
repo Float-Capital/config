@@ -1,0 +1,15 @@
+{
+  "name": "float-config",
+  "namespace": true,
+  "sources": {
+    "dir": "src",
+    "subdirs": true
+  },
+  "package-specs": {
+    "module": "commonjs",
+    "in-source": true
+  },
+  "bs-dependencies": [
+  ],
+  "suffix": ".js"
+}
