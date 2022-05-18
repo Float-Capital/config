@@ -1,6 +1,5 @@
 {
-  "name": "float-config",
-  "namespace": true,
+  "name": "@float-dao/config",
   "sources": {
     "dir": "src",
     "subdirs": true
@@ -10,5 +9,5 @@
     "in-source": true
   },
   "bs-dependencies": [],
-  "suffix": ".js",
+  "suffix": ".js"
 }

@@ -1,6 +1,6 @@
 {
-  "name": "@float-capital/config",
-  "version": "0.1.0",
+  "name": "@float-dao/config",
+  "version": "0.3.0",
   "scripts": {
     "res:build": "rescript build -with-deps",
     "res:start": "rescript build -w -with-deps",
