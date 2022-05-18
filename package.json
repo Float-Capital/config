@@ -1,5 +1,5 @@
 {
-  "name": "float-config",
+  "name": "@float-capital/config",
   "version": "0.1.0",
   "scripts": {
     "res:build": "rescript build -with-deps",
@@ -8,13 +8,12 @@
     "res:format": "rescript format -all",
     "refmt": "rescript format -all"
   },
-  "description": "Smart contract addresses for Float Capital",
+  "description": "Smart contract addresses and other config for Float Capital",
   "main": "index.js",
   "repository": "https://github.com/Float-Capital/config",
   "author": "Float DAO",
   "license": "MIT",
   "keywords": [
-    "bucklescript",
     "rescript"
   ],
   "dependencies": {

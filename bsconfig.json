@@ -9,7 +9,6 @@
     "module": "commonjs",
     "in-source": true
   },
-  "bs-dependencies": [
-  ],
-  "suffix": ".js"
+  "bs-dependencies": [],
+  "suffix": ".js",
 }
