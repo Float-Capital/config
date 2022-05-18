@@ -6,7 +6,8 @@
     "res:start": "rescript build -w -with-deps",
     "res:clean": "rescript clean -with-deps",
     "res:format": "rescript format -all",
-    "refmt": "rescript format -all"
+    "refmt": "rescript format -all",
+    "test": "node tests/TypeSafetyTest.js"
   },
   "description": "Smart contract addresses and other config for Float Capital",
   "main": "index.js",
