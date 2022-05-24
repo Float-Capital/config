@@ -76,7 +76,7 @@ config = {
       isUnitSuffix: false,
       symbol: "2AVAX",
       plannedLaunchTimestamp: 1639490400,
-      createdTimestamp: 1638805641,
+      actualLaunchTimestamp: 1638805641,
       yieldManager: {
         providerType: "AAVE",
         contract: {
@@ -124,7 +124,7 @@ config = {
       isUnitSuffix: false,
       symbol: "2JOE",
       plannedLaunchTimestamp: 1639663200,
-      createdTimestamp: 1639643931,
+      actualLaunchTimestamp: 1639643931,
       yieldManager: {
         providerType: "JOE",
         contract: {
@@ -172,12 +172,12 @@ config = {
       isUnitSuffix: false,
       symbol: "2QI",
       plannedLaunchTimestamp: 1642514400,
-      createdTimestamp: 1642511122,
+      actualLaunchTimestamp: 1642511122,
       yieldManager: {
         providerType: "BENQI",
         contract: {
           address: "0xEb2A90ED68017Ac1B068077C5D1537f4C544036C",
-          description: "Compound-based yield manager that uses QI as backend instead of Compound.",
+          description: "Compound-based yield manager that uses QI as yield provider instead of Compound.",
           codeUrl: "https://github.com/Float-Capital/contracts/blob/master/contracts/YieldManagers/DefaultYieldManagerCompound.sol",
         },
       },
@@ -220,12 +220,12 @@ config = {
       isUnitSuffix: false,
       symbol: "2SPELL",
       plannedLaunchTimestamp: 1643896800, // Thu Feb 03 2022 14:00:00 GMT+0000
-      createdTimestamp: 1643870947, // Thu Feb 03 2022 06:49:07 GMT+0000
+      actualLaunchTimestamp: 1643870947, // Thu Feb 03 2022 06:49:07 GMT+0000
       yieldManager: {
         providerType: "BENQI",
         contract: {
           address: "0xcD62196CC117EA7fd9525ADe37e44d01209e8EBB",
-          description: "Compound-based yield manager that uses QI as backend instead of Compound.",
+          description: "Compound-based yield manager that uses QI as yield provider instead of Compound.",
           codeUrl: "https://github.com/Float-Capital/contracts/blob/master/contracts/YieldManagers/DefaultYieldManagerCompound.sol",
         },
       },

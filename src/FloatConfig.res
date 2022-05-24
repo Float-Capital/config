@@ -56,7 +56,7 @@ type market = {
   unitOfMeasure: string,
   isUnitSuffix: bool,
   plannedLaunchTimestamp: option<int>,
-  createdTimestamp: int,
+  actualLaunchTimestamp: int,
   yieldManager: yieldManager,
   oracleManager: oracleManager,
   longToken: erc20,
@@ -82,3 +82,11 @@ type chainConfigShape = {
 @module("./raw/config-avalanche.js") external avalancheConfig: chainConfigShape = "config"
 @module("./raw/config-polygon.js") external polygonConfig: chainConfigShape = "config"
 
+let getChainConfig = chainId =>
+  if avalancheConfig.networkId == chainId {
+    Some(avalancheConfig)
+  } else if polygonConfig.networkId == chainId {
+    Some(polygonConfig)
+  } else {
+    None
+  }

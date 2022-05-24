@@ -8,6 +8,17 @@ var avalancheConfig = ConfigAvalancheJs.config;
 
 var polygonConfig = ConfigPolygonJs.config;
 
+function getChainConfig(chainId) {
+  if (avalancheConfig.networkId === chainId) {
+    return avalancheConfig;
+  } else if (polygonConfig.networkId === chainId) {
+    return polygonConfig;
+  } else {
+    return ;
+  }
+}
+
 exports.avalancheConfig = avalancheConfig;
 exports.polygonConfig = polygonConfig;
+exports.getChainConfig = getChainConfig;
 /* avalancheConfig Not a pure module */

@@ -131,8 +131,8 @@ let checkConfigSatifiesTypeSignature = (config: chainConfigShape) => {
       j`isUnitSuffix is not defined for $networkName config and $marketName market`->Js.log
     }
 
-    if isIntUndefinedOrNull(market.createdTimestamp) {
-      j`createdTimestamp is not defined for $networkName config and $marketName market`->Js.log
+    if isIntUndefinedOrNull(market.actualLaunchTimestamp) {
+      j`actualLaunchTimestamp is not defined for $networkName config and $marketName market`->Js.log
     }
 
     // Check the contracts
