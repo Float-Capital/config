@@ -7,7 +7,7 @@ config = {
   networkId: 43114,
   networkName: "Avalanche",
   networkCurrencySymbol: "AVAX",
-  rpcEndopint: "https://api.avax.network/ext/bc/C/rpc",
+  rpcEndpoint: "https://api.avax.network/ext/bc/C/rpc",
   blockExplorer: "https://snowtrace.io/",
   bridgeLink: "https://bridge.avax.network/",
   contracts: {
@@ -57,34 +57,41 @@ config = {
       codeUrl: "https://github.com/Float-Capital/contracts/blob/master/contracts/GemCollectorNFT.sol",
     },
   },
-  paymentTokens: [{
-    address: "0xd586e7f844cea2f87f50152665bcbc2c279d8d70",
-    isUSDBased: true,
-    decimals: 18,
-    symbol: "DAI",
-    iconUrl: "https://media-float-capital.fra1.cdn.digitaloceanspaces.com/public/icons/tokens/dai.svg",
-  }],
-  hiddenMarkets: [],
   markets: [
     {
       index: 1,
-      name: "Avalanche Market",
+      name: "Avalanche",
       description:
         "Avax is the main token of the Avalanche blockchain and acts as the primary 'fuel' that powers all activity on it. Avax is used to perform actions on the network, such as sending transactions and interacting with dapps.",
       iconUrl: "https://media-float-capital.fra1.cdn.digitaloceanspaces.com/public/tokens/avax/avax.png",
       leverage: 2,
-      paymentTokenSymbol: "DAI",
+      paymentToken: {
+        address: "0xd586e7f844cea2f87f50152665bcbc2c279d8d70",
+        isUSDBased: true,
+        decimals: 18,
+        symbol: "DAI",
+        iconUrl: "https://media-float-capital.fra1.cdn.digitaloceanspaces.com/public/icons/tokens/dai.svg",
+      },
+      unitOfMeasure: "$",
+      isUnitSuffix: false,
       symbol: "2AVAX",
-      launchTimestamp: 1639490400,
+      plannedLaunchTimestamp: 1639490400,
       createdTimestamp: 1638805641,
       yieldManager: {
-        address: "0x621cda10820555adAe8506eeC296cB9621E491Ff",
-        description: "Aave-based yield manager",
-        codeUrl: "https://github.com/Float-Capital/contracts/blob/master/contracts/YieldManagers/YieldManagerAaveBasic.sol",
+        providerType: "AAVE",
+        contract: {
+          address: "0x621cda10820555adAe8506eeC296cB9621E491Ff",
+          description: "Aave-based yield manager",
+          codeUrl: "https://github.com/Float-Capital/contracts/blob/master/contracts/YieldManagers/YieldManagerAaveBasic.sol",
+        },
       },
-      oracle: {
-        decimals: 8,
-        heartbeat: 135,
+      oracleManager: {
+        providerType: "CHAINLINK",
+        contract: {
+          address: "0xE22268dB718912dc6A73106dd4ABf34080b1C4e1",
+          description: "Chainlink-based oracle manager",
+          codeUrl: "https://github.com/Float-Capital/contracts/blob/master/contracts/oracles/OracleManagerChainlink.sol",
+        },
       },
       longToken: {
         address: "0xa43a73f17ECde987A9127A5cBE46B7923F351c32",
@@ -101,21 +108,38 @@ config = {
     },
     {
       index: 2,
-      name: "JOE Market",
+      name: "JOE",
       description:
         "JOE is a governance token that rewards its holders with a share of exchange revenues from the Trader Joe protocol. Trader Joe is a one-stop decentralized trading platform on the Avalanche network.",
-      oracleHeartbeatInSec: 1800,
       iconUrl: "https://media-float-capital.fra1.cdn.digitaloceanspaces.com/public/tokens/joe/joe.png",
-      oracleDecimals: 8,
       leverage: 2,
-      paymentTokenSymbol: "DAI",
+      paymentToken: {
+        address: "0xd586e7f844cea2f87f50152665bcbc2c279d8d70",
+        isUSDBased: true,
+        decimals: 18,
+        symbol: "DAI",
+        iconUrl: "https://media-float-capital.fra1.cdn.digitaloceanspaces.com/public/icons/tokens/dai.svg",
+      },
+      unitOfMeasure: "$",
+      isUnitSuffix: false,
       symbol: "2JOE",
-      launchTimestamp: 1639663200,
+      plannedLaunchTimestamp: 1639663200,
       createdTimestamp: 1639643931,
       yieldManager: {
-        address: "0x47a21F14794b6229cc2a1ddfe4498C9e48f1C16c",
-        description: "Aave-based yield manager that uses JOE as backend instead of Aave.",
-        codeUrl: "https://github.com/Float-Capital/contracts/blob/master/contracts/YieldManagers/YieldManagerAaveBasic.sol",
+        providerType: "JOE",
+        contract: {
+          address: "0x47a21F14794b6229cc2a1ddfe4498C9e48f1C16c",
+          description: "Aave-based yield manager that uses JOE as backend instead of Aave.",
+          codeUrl: "https://github.com/Float-Capital/contracts/blob/master/contracts/YieldManagers/YieldManagerAaveBasic.sol",
+        },
+      },
+      oracleManager: {
+        providerType: "CHAINLINK",
+        contract: {
+          address: "0xEc120de9fFaE289f5b383ffb582F3cC1F449E3aa",
+          description: "Chainlink-based oracle manager",
+          codeUrl: "https://github.com/Float-Capital/contracts/blob/master/contracts/oracles/OracleManagerChainlink.sol",
+        },
       },
       longToken: {
         iconUrl:
@@ -132,22 +156,38 @@ config = {
     },
     {
       index: 3,
-      name: "QI Market",
+      name: "QI",
       description:
         "QI is the governance token for BENQI, Avalanche's leading liquidity protocol. QI is earned as a reward for supplying liquidity in BENQI, and can be supplied in their protocol for a tasty APY.",
-      oracleHeartbeatInSec: 1800,
-      icon: "https://media-float-capital.fra1.cdn.digitaloceanspaces.com/public/tokens/qi/qi.png",
-      oracleDecimals: 8,
+      iconUrl: "https://media-float-capital.fra1.cdn.digitaloceanspaces.com/public/tokens/qi/qi.png",
       leverage: 2,
-      paymentTokenSymbol: "DAI",
+      paymentToken: {
+        address: "0xd586e7f844cea2f87f50152665bcbc2c279d8d70",
+        isUSDBased: true,
+        decimals: 18,
+        symbol: "DAI",
+        iconUrl: "https://media-float-capital.fra1.cdn.digitaloceanspaces.com/public/icons/tokens/dai.svg",
+      },
+      unitOfMeasure: "$",
+      isUnitSuffix: false,
       symbol: "2QI",
-      launchTimestamp: 1642514400,
+      plannedLaunchTimestamp: 1642514400,
       createdTimestamp: 1642511122,
-      usesBenqiForYield: true,
       yieldManager: {
-        address: "0xEb2A90ED68017Ac1B068077C5D1537f4C544036C",
-        description: "Compound-based yield manager that uses QI as backend instead of Compound.",
-        codeUrl: "https://github.com/Float-Capital/contracts/blob/master/contracts/YieldManagers/DefaultYieldManagerCompound.sol",
+        providerType: "BENQI",
+        contract: {
+          address: "0xEb2A90ED68017Ac1B068077C5D1537f4C544036C",
+          description: "Compound-based yield manager that uses QI as backend instead of Compound.",
+          codeUrl: "https://github.com/Float-Capital/contracts/blob/master/contracts/YieldManagers/DefaultYieldManagerCompound.sol",
+        },
+      },
+      oracleManager: {
+        providerType: "CHAINLINK",
+        contract: {
+          address: "0x9341437bbb9c7C0Ed5DcaDA60886780aB3C81524",
+          description: "Chainlink-based oracle manager",
+          codeUrl: "https://github.com/Float-Capital/contracts/blob/master/contracts/oracles/OracleManagerChainlink.sol",
+        },
       },
       longToken: {
         iconUrl:
@@ -164,23 +204,38 @@ config = {
     },
     {
       index: 4,
-      name: "Spell Market",
+      name: "Spell",
       description:
         "SPELL is the governance token for Abracadabra, Avalanche's leading stablecoin protocol. SPELL can be used as a governance token for protocol improvements as well as a token that you can stake to earn protocol fees.",
-      oracleHeartbeatInSec: 1800,
-      icon: "https://media-float-capital.fra1.cdn.digitaloceanspaces.com/public/icons/tokens/spell.svg",
-      oracleDecimals: 8,
+      iconUrl: "https://media-float-capital.fra1.cdn.digitaloceanspaces.com/public/icons/tokens/spell.svg",
       leverage: 2,
-      paymentSymbol: "$",
+      paymentToken: {
+        address: "0xd586e7f844cea2f87f50152665bcbc2c279d8d70",
+        isUSDBased: true,
+        decimals: 18,
+        symbol: "DAI",
+        iconUrl: "https://media-float-capital.fra1.cdn.digitaloceanspaces.com/public/icons/tokens/dai.svg",
+      },
+      unitOfMeasure: "$",
+      isUnitSuffix: false,
       symbol: "2SPELL",
-      launchTimestamp: 1643896800, // Thu Feb 03 2022 14:00:00 GMT+0000
+      plannedLaunchTimestamp: 1643896800, // Thu Feb 03 2022 14:00:00 GMT+0000
       createdTimestamp: 1643870947, // Thu Feb 03 2022 06:49:07 GMT+0000
-      usesBenqiForYield: true,
-      usesJoeForYield: true,
       yieldManager: {
-        address: "0xcD62196CC117EA7fd9525ADe37e44d01209e8EBB",
-        description: "Compound-based yield manager that uses QI as backend instead of Compound.",
-        codeUrl: "https://github.com/Float-Capital/contracts/blob/master/contracts/YieldManagers/DefaultYieldManagerCompound.sol",
+        providerType: "BENQI",
+        contract: {
+          address: "0xcD62196CC117EA7fd9525ADe37e44d01209e8EBB",
+          description: "Compound-based yield manager that uses QI as backend instead of Compound.",
+          codeUrl: "https://github.com/Float-Capital/contracts/blob/master/contracts/YieldManagers/DefaultYieldManagerCompound.sol",
+        },
+      },
+      oracleManager: {
+        providerType: "CHAINLINK",
+        contract: {
+          address: "0xD1d169B5898b142EBbEbc3E94Cfa7E05C84e957b",
+          description: "Chainlink-based oracle manager",
+          codeUrl: "https://github.com/Float-Capital/contracts/blob/master/contracts/oracles/OracleManagerChainlink.sol",
+        },
       },
       longToken: {
         iconUrl:

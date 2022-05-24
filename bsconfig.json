@@ -1,14 +1,19 @@
 {
-  "name": "float-config",
-  "namespace": true,
-  "sources": {
-    "dir": "src",
-    "subdirs": true
-  },
+  "name": "@float-dao/config",
+  "sources": [
+    {
+      "dir": "src",
+      "subdirs": true
+    },
+    {
+      "dir": "tests",
+      "type": "dev"
+    }
+  ],
   "package-specs": {
     "module": "commonjs",
     "in-source": true
   },
   "bs-dependencies": [],
-  "suffix": ".js",
+  "suffix": ".js"
 }

@@ -1,7 +1,7 @@
 type erc20 = {
   address: string,
   symbol: string,
-  iconUrl: option<string>,
+  iconUrl: string,
 }
 
 type contract = {
@@ -28,26 +28,37 @@ type paymentToken = {
   isUSDBased: bool,
   decimals: int,
   symbol: string,
-  iconUrl: option<string>,
+  iconUrl: string,
 }
 
-type oracle = {
-  decimals: int,
-  heartbeat: int,
+type oracleProvider = [ #CHAINLINK ]
+
+type oracleManager = {
+  providerType: oracleProvider,
+  contract: contract,
+}
+
+type yieldProvider = [ #AAVE | #BENQI | #JOE ]
+
+type yieldManager = {
+  providerType: yieldProvider,
+  contract: contract,
 }
 
 type market = {
   index: int,
   name: string,
   description: string,
-  iconUrl: option<string>,
-  leverage: int,
-  paymentTokenSymbol: string,
+  iconUrl: string,
+  leverage: float, // most likely an integer but we make it a float just in case
+  paymentToken: erc20,
   symbol: string,
-  launchTimestamp: int,
+  unitOfMeasure: string,
+  isUnitSuffix: bool,
+  plannedLaunchTimestamp: option<int>,
   createdTimestamp: int,
-  yieldManager: contract,
-  oracle: oracle,
+  yieldManager: yieldManager,
+  oracleManager: oracleManager,
   longToken: erc20,
   shortToken: erc20,
 }
@@ -57,17 +68,17 @@ type chainConfigShape = {
   networkName: string,
   networkCurrencySymbol: string,
   dbGraphEndpointPublic: option<string>,
-  rpcEndopint: string,
+  rpcEndpoint: string,
   blockExplorer: string,
   graphEndpoint: string,
   priceHistoryGraphEndpoint: string,
   graphPrefix: option<string>,
   bridgeLink: option<string>,
   contracts: contracts,
-  paymentTokens: array<paymentToken>,
   hiddenMarkets: option<array<int>>,
   markets: array<market>,
 }
 
-@module("./raw/config-avalanche.js") external avalanche: chainConfigShape = "config"
+@module("./raw/config-avalanche.js") external avalancheConfig: chainConfigShape = "config"
+@module("./raw/config-polygon.js") external polygonConfig: chainConfigShape = "config"
 
