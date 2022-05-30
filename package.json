@@ -1,6 +1,6 @@
 {
-  "name": "@float-capital/config",
-  "version": "0.6.0",
+  "name": "@float-packages/config",
+  "version": "1.0.0",
   "scripts": {
     "res:build": "rescript build -with-deps",
     "res:start": "rescript build -w -with-deps",
