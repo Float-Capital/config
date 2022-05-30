@@ -111,8 +111,8 @@ function checkConfigSatifiesTypeSignature(config) {
     if (isBoolUndefinedOrNull(market.isUnitSuffix)) {
       console.log("isUnitSuffix is not defined for " + networkName + " config and " + marketName + " market");
     }
-    if (isIntUndefinedOrNull(market.createdTimestamp)) {
-      console.log("createdTimestamp is not defined for " + networkName + " config and " + marketName + " market");
+    if (isIntUndefinedOrNull(market.actualLaunchTimestamp)) {
+      console.log("actualLaunchTimestamp is not defined for " + networkName + " config and " + marketName + " market");
     }
     checkErc20(market.paymentToken, "paymentToken", market.name);
     checkErc20(market.longToken, "longToken", market.name);

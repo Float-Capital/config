@@ -75,7 +75,7 @@ config = {
       unitOfMeasure: "%",
       isUnitSuffix: true,
       symbol: "F3",
-      createdTimestamp: 1631534949,
+      actualLaunchTimestamp: 1631534949,
       yieldManager: {
         providerType: "AAVE",
         contract: {
@@ -122,7 +122,7 @@ config = {
       unitOfMeasure: "$",
       isUnitSuffix: false,
       symbol: "3TH",
-      createdTimestamp: 1633089246,
+      actualLaunchTimestamp: 1633089246,
       yieldManager: {
         providerType: "AAVE",
         contract: {
@@ -169,7 +169,7 @@ config = {
       unitOfMeasure: "$",
       isUnitSuffix: false,
       symbol: "2OHM",
-      createdTimestamp: 1635775156,
+      actualLaunchTimestamp: 1635775156,
       yieldManager: {
         providerType: "AAVE",
         contract: {
@@ -216,7 +216,7 @@ config = {
       unitOfMeasure: "$",
       isUnitSuffix: false,
       symbol: "2AXS",
-      createdTimestamp: 1639483202,
+      actualLaunchTimestamp: 1639483202,
       yieldManager: {
         providerType: "AAVE",
         contract: {
@@ -263,7 +263,7 @@ config = {
       unitOfMeasure: "$",
       isUnitSuffix: false,
       symbol: "2CDI",
-      createdTimestamp: 1640251504,
+      actualLaunchTimestamp: 1640251504,
       yieldManager: {
         providerType: "AAVE",
         contract: {
@@ -311,7 +311,7 @@ config = {
       isUnitSuffix: false,
       symbol: "2LINK",
       plannedLaunchTimestamp: 1641909600,
-      createdTimestamp: 1641900738,
+      actualLaunchTimestamp: 1641900738,
       yieldManager: {
         providerType: "AAVE",
         contract: {
@@ -358,7 +358,7 @@ config = {
       unitOfMeasure: "$",
       isUnitSuffix: false,
       symbol: "2OHMv2",
-      createdTimestamp: 1642110514,
+      actualLaunchTimestamp: 1642110514,
       yieldManager: {
         providerType: "AAVE",
         contract: {

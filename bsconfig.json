@@ -1,5 +1,5 @@
 {
-  "name": "@float-dao/config",
+  "name": "@float-packages/config",
   "sources": [
     {
       "dir": "src",
